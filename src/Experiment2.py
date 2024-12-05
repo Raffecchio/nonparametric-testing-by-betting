@@ -97,15 +97,12 @@ if __name__=='__main__':
 
     args = parser.parse_args()
 
-
-
-
  # Maximum sample size 
     Epsilon_mean = np.flip(np.array([0.3, 0.35, 0.4, 0.45, 0.5, 0.7]))
     NN_batch = np.flip(np.array([1200, 1000, 600, 500, 450, 250]))
     NN_betting = 3*NN_batch 
 
-    d= args.d 
+    d = args.d 
     num_perms = args.num_perms 
     num_trials= args.num_trials
     alpha= args.alpha
@@ -129,7 +126,7 @@ if __name__=='__main__':
                     alpha=alpha, epsilon_mean=epsilon_mean, 
                     epsilon_var=epsilon_var, num_pert_mean=num_pert_mean, 
                     num_pert_var=num_pert_var,
-                    num_steps_batch=num_steps_batch, progress_bar=False)
+                    num_steps_batch=num_steps_batch, progress_bar=True)
         DataToPlot[epsilon_mean] = (powerBatch, samplesizeBatch, meanTau)
         print('__'*20, '\n')
 

@@ -87,7 +87,7 @@ def runSequentialTest(Source, Prediction, Betting, alpha=0.05,
             # get the betting fractions 
             Lambda = Betting(F, **bet_params) 
             W = np.cumprod(1 + Lambda*F) 
-        else: #hedge over different prediction strategies 
+        else: # hedge over different prediction strategies 
             # some sanity checking 
             assert isinstance(Prediction, list) 
             assert isinstance(Betting, list) 
